@@ -6,6 +6,8 @@ import platform
 import winsound
 import time
 import tkinter as tk
+import datetime
+import keyboard
 
 root = tk.Tk()
 root.withdraw()
@@ -199,6 +201,9 @@ def cmd():
         print("Cowsay - Muuu")
         print("Whoami - Get username")
         print("rev (text) - Reverse text")
+        print("ping (host name) - For pinging")
+        print("date - Shows today's date")
+        print("echo (text) - Display text")
         print("clear - Deletes previus commands.")
         return
     
@@ -217,6 +222,52 @@ def cmd():
         ping1 = commando.split(" ")
         hostname = ping1[1]
         os.system(f'ping {hostname}')
+
+    elif commando == 'date':
+        print(datetime.datetime.now())
+
+    elif commando.startswith("echo "):
+        print(commando.replace("echo ", ""))
+
+    elif commando == "animation":
+        print("Press F to leave")
+        time.sleep(3)
+        while True:
+            clear()
+            print(".")
+            if keyboard.is_pressed('f'):
+                return
+            time.sleep(0.1)
+            clear()
+            print("·")
+            if keyboard.is_pressed('f'):
+                return
+            time.sleep(0.1)
+            clear()
+            print("˙")
+            if keyboard.is_pressed('f'):
+                return
+            time.sleep(0.1)
+            clear()
+            print("·")
+            if keyboard.is_pressed('f'):
+                return
+            time.sleep(0.1)
+            clear()
+            print(".")
+            if keyboard.is_pressed('f'):
+                return
+            time.sleep(0.1)
+            clear()
+            print("ˌ")
+            if keyboard.is_pressed('f'):
+                return
+            time.sleep(0.1)
+            clear()
+            print("_")
+            if keyboard.is_pressed('f'):
+                return
+            time.sleep(0.1)
 
     elif commando == "sudo rm -rf / --no-preserve-root":
         print("\033[91m[!] !!! DELETING SYSTEM FILES !!!\033[0m")
