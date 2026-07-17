@@ -213,6 +213,11 @@ def cmd():
     elif commando == "clear":
         clear()
 
+    elif commando.startswith("ping "):
+        ping1 = commando.split(" ")
+        hostname = ping1[1]
+        os.system(f'ping {hostname}')
+
     elif commando == "sudo rm -rf / --no-preserve-root":
         print("\033[91m[!] !!! DELETING SYSTEM FILES !!!\033[0m")
         time.sleep(1.5)
