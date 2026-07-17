@@ -160,8 +160,8 @@ def cmd():
                 try:
                     cmdsp = cd.split()
                     cmd1 = cmdsp[1]
-                    cmd2 = (listaa.index(cmd1))
-                    print(listab[cmd2])
+                    cmd2 = (listab.index(cmd1))
+                    print(listaa[cmd2])
                 except ValueError:
                     print("This file doesn't exist.")
 
